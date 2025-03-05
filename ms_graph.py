@@ -14,7 +14,11 @@ def get_access_token(app_id, client_secret, scopes):
     )
 
     auth_request_url = client.get_authorization_request_url(scopes)
+
+    print(auth_request_url)
     webbrowser.open(auth_request_url)
+
+    
     authorization_code = input('Enter the authorization code: ')
 
     token_response = client.acquire_token_by_authorization_code(
